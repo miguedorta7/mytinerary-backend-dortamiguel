@@ -15,6 +15,9 @@ import path from 'path';                        //Para conocer la ubicación de 
 import logger from 'morgan'                     //Se utiliza para registrar cada una de las peticiones.      
 //var indexRouter = require('./routes/index');  //Solo vamos a configurar las rutas del enrutador de back principal
 import indexRouter from './routes/index.js'     //este enrutador va a llamar a TODOS los otros recursos (cities, itineraries,users)
+import cors from 'cors'
+
+
 
 let app = express();                            //Ejecutando el modulo express: CREO UNA APP DE BACKEND (SERVIDOR)
 
@@ -30,6 +33,8 @@ app.use(express.json());                                   //Obligo al servidor 
 app.use(express.urlencoded({ extended: false }));          //Obligo al servidor a leer params/queries
 //app.use(cookieParser());                                    
 app.use(express.static(path.join(__dirname, 'public')));   //Obligo al servidor a usar los archivos estáticos de la carpeta public  
+app.use(cors())
+
 
 //ROUTER
 app.use('/api', indexRouter);                                 //Obligo al servidor a que use las rutas del enrutador principal con "/api"
