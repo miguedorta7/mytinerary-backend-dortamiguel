@@ -1,12 +1,12 @@
-import {model,Schema,Types} from "mongoose";
+import { model,Schema,Types } from "mongoose";
 
-let colecction= 'activities';
-let schema = new Schema ({
-    name: {Type: String, required: true},
-    photo:{Type: String, required: true},
-    itinerary_id: {type:Types.ObjectId, required: true}
-});
+let collection = "activities"
+let schema = new Schema({
+    name: {type:String, required:true},
+    photo: { type:String,required:true },
+    itinerary_id: {type:Types.ObjectId,required:true,ref:'itineraries'}
 
-let Activity = model(colecction,schema);
+})
 
-export default Activity;
+let Activity = model(collection,schema)
+export default Activity
