@@ -29,9 +29,6 @@ export default Itinerary
 
 
 
-
-
-
 /* Definir el modelo Itinerary con las propiedades name,price,duration,tags,photo y se referencia con la colección cities con la propiedad city_id
 Luego definir el modelo Activity con las propiedades name,photo y se relaciona con la colección iteneraries con la propiedad itinerary_id
 Les paso el archivo con los 4 arrays de datos a cargar a mongo: users,cities,itineraries,activities */

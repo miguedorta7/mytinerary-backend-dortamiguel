@@ -147,4 +147,7 @@ async function createItineraries(arrayItineraries){
     }
 }
 
+
 createItineraries(itineraries);
+
+
