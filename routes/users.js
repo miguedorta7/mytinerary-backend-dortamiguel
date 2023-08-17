@@ -26,31 +26,3 @@ export default router;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//router.metodo('/',funcion)
-//método http que: para crear un POST, para actualizar es PUT/PATCH y para eliminar es DELETE.
-//funcion que se va a ejecutar UNA UNICA VEZ cada vez que se llame al endpoint de manera que
-//cada que realizo una petición POST, se creara un recurso
-//cada que realizo una petición GET, se leeran recursos
-//cada que realizo una petición PUT/PATCH se actualizaran recursos
-//cada que realizo una petición DELETE   se eliminara un recurso
-
-//req: es el objeto donde el cliente me manda MUCHOS DATOS importantes acerca de la petición.
-//las propiedades de req MAS IMPORTANTES SON:
-//BODY: objeto que generalmente se envia a travez de formularios
-//PARAMS (paramétros): suelen ser estaticos como el id de una ciudad a buscar por ejemplo.
-//QUERIES (consultas): son opcionales y nos indican algunas consultas/filtros/modos de ver la info/ de la pagina.etc
