@@ -4,7 +4,6 @@ import { connect } from 'mongoose'
 import Activity from '../Activity.js'
 import Itinerary from '../Itinerary.js'
 
-
 const activities = [{
     name: "Hikking Tour",
     photo: "https://i.im.ge/2022/09/07/OfQSzP.Depositphotos-111788638-s-2015.webp",
@@ -247,4 +246,3 @@ async function createActivities(arrayActivities){
 
 
 createActivities(activities);
-

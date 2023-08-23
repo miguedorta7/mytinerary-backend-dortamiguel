@@ -16,9 +16,6 @@ import notFoundHandler from './middlewares/notFoundHandler.js'
 import errorHandler from './middlewares/errorHandler.js'
 import cors from 'cors'        //Modulo para debloquear las politicas de CORS
 
-
-
-
 let app = express();                          //ejecutando el módulo de express: CREO UNA APP DE BACKEND (SERVIDOR)
 
 // VIEW ENGINE SETUP
@@ -34,7 +31,8 @@ app.use(express.json());                                  //obligo al servidor a
 app.use(express.urlencoded({ extended: false }));         //obligo al servidor a leer params/queries
 //app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));  //obligo al servidor a acceder a los archivos estáticos de la capreta public
-app.use(cors())
+
+app.use(cors())                                             //obligo al servidor a debloquear la politica de cors
 
 
 // ROUTER
