@@ -29,7 +29,7 @@ app.use(express.json());                                  //obligo al servidor a
 app.use(express.urlencoded({ extended: false }));         //obligo al servidor a leer params/queries
 //app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));  //obligo al servidor a acceder a los archivos estáticos de la capreta public
-app.use(cors())
+app.use(cors())                                             //obligo al servidor a debloquear la politica de cors
 
 // ROUTER
 app.use('/api', indexRouter);                                //obligo al servidor a que use las rutas del enrutador principal con "/api"
