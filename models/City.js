@@ -13,6 +13,7 @@ let schema = new Schema({
     featuredLocation:{type:String,default:"edit later"},
     admin_id:{type:Types.ObjectId,required:true,ref:'users'}
     //para relacionar datos en mongo es necesario REFERENCIAR El DATO HACIA LA COLECCIÓN QUE NECESITO RELACIONARME
+
 },{
     timestamps: true
 }) 

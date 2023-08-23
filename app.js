@@ -8,6 +8,7 @@ import express from 'express'                 //provee metodos y propiedades par
 import path from 'path'                       //para conocer la ubicacion de nuestro servidor
 //var cookieParser = require('cookie-parser');
 //var logger = require('morgan');
+
 import logger from 'morgan'                   //para registrar cada una de las peticiones
 //var indexRouter = require('./routes/index');//solo vamos a configurar las rutas del enrutador de back principal
 import indexRouter from './routes/index.js'   //este enrutador va a llamar a TODOS los otros recuersos (cities,itineraries,users)
@@ -22,6 +23,7 @@ let app = express();                          //ejecutando el módulo de express
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+
 // MIDDLEWARES (funciones)
 //USE es el método necesario para obligar a mi aplicación a que use la función CADA VEZ que se realiza una SOLICITUD/PETICION
 app.use(logger('dev'));                                   //obligo al servidor a registrar una petición con el módulo de logger/morgan
@@ -29,7 +31,9 @@ app.use(express.json());                                  //obligo al servidor a
 app.use(express.urlencoded({ extended: false }));         //obligo al servidor a leer params/queries
 //app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));  //obligo al servidor a acceder a los archivos estáticos de la capreta public
+
 app.use(cors())                                             //obligo al servidor a debloquear la politica de cors
+
 
 // ROUTER
 app.use('/api', indexRouter);                                //obligo al servidor a que use las rutas del enrutador principal con "/api"

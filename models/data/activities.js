@@ -1,11 +1,13 @@
 import'dotenv/config.js'
 import { connect } from 'mongoose'
+
 import Activity from '../Activity.js'
 import Itinerary from '../Itinerary.js'
 
 const activities = [{
     name: "Hikking Tour",
     photo: "https://i.im.ge/2022/09/07/OfQSzP.Depositphotos-111788638-s-2015.webp",
+
     itinerary_id: "64d9731ee1d334877dbae180"
 },{
     name: "Parachuting Experience",
@@ -236,9 +238,11 @@ async function createActivities(arrayActivities){
             await Activity.create(activity)
         }
         console.log("Successful itinerary")
+
     } catch (error) {
         console.log(error)
     }
 }
+
 
 createActivities(activities);
