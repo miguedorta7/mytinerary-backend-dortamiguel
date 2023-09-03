@@ -3,6 +3,7 @@ import Itinerary from "../../models/Itinerary.js"
  export default async (req,res,next) => {
     try {
 
+
        /*  let queries = {}
 
         if (req.query._id) {
@@ -30,3 +31,4 @@ import Itinerary from "../../models/Itinerary.js"
             next(error)
         }
     } 
+

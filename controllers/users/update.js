@@ -30,5 +30,3 @@ export default async(req,res) => {
 
 
 
-
-//new:true => por default en FALSE y devuelve el objeto ANTES de modificarlo, si lo cambio a TRUE devuelve el objeto LUEGO de la modificación.
