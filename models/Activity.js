@@ -1,4 +1,5 @@
 
+
 import { model,Schema,Types } from "mongoose";
 
 let collection = "activities"
@@ -12,4 +13,3 @@ let schema = new Schema({
 let Activity = model(collection,schema)
 
 export default Activity
-

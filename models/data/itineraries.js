@@ -140,14 +140,12 @@ async function createItineraries(arrayItineraries){
             let city_id = await city._id
             itinerary.city_id= city_id
             await Itinerary.create(itinerary)
-            console.log("Successful itinerary")
         }
+        console.log("Successful itinerary")
     } catch (error) {
         console.log(error)
     }
 }
 
-
 createItineraries(itineraries);
-
 
