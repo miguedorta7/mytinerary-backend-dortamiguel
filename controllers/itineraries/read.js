@@ -3,41 +3,30 @@ import Itinerary from "../../models/Itinerary.js"
  export default async (req,res,next) => {
     try {
 
+       /*  let queries = {}
+
+        if (req.query._id) {
+            //Si existe la consulta llename el objeto de consultas para hacer el filtro.
+            queries._id = req.query._id
+            //al objeto de filtro le agrego la propiedad de busqueda y le asigno el valor que me envia el cliente en la query
+        } */
         console.log(req.query)
-
-        let objetosDeBusqueda={}
-        let objetoDeOrdenamiento={}
-
-        if (req.query._id) {
-            objetosDeBusqueda._id = req.query._id
-        }
-
-        if (req.query._id) {
-            objetoDeBusqueda._id = new RegExp(req.query._id,'i')
-            //new RegExp(req.query.title,'i')
-        }
-        if (req.query.sort) {
-            objetoDeOrdenamiento._id = req.query.sort
-        }
-
-        let allItineraries = await Itinerary.find(objetosDeBusqueda,'price duration photo tags')
-        .populate('_id', 'photo name -id')
-        .sort(objetoDeOrdenamiento)
-
-        if (allItineraries.length>0) {
+        let allItineraries = await Itinerary.find({city_id:req.query._id})
+        //.populate('city_id','city photo admin_id')
+         .populate({
+            path:"city_id",
+            select:"city photo admin_id",
+            populate:{
+                path: "admin_id",
+                select:"name photo"
+            }
+        }) 
             return res.status(200).json({
                 success: true,
-                message: 'Itinerary found',
+                message: ' itineraries found',
                 response: allItineraries
             })
-        } else {
-            return res.status(404).json({
-                success: false,
-                message: 'not found',
-                response: null
-            })
+        }catch (error) {
+            next(error)
         }
-    } catch (error) {
-        next(error)
-    }
-} 
+    } 

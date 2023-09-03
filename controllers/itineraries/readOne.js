@@ -3,7 +3,7 @@ import Itinerary from "../../models/Itinerary.js"
 
 export default async (req,res,next) => {
     try {
-        let oneItinerary = await Itinerary.findById(req.params._id)
+        let oneItinerary = await Itinerary.find({city_id:req.query._id})
         if (oneItinerary) {
             return res.status(200).json({
                 success: true,
