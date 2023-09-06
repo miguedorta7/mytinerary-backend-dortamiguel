@@ -4,7 +4,7 @@ import citiesRouter from './cities.js'
 import itinerariesRouter from './itineraries.js';
 import activitiesRouter from './activities.js'
 //EL enrutador principal va a llamar a todos los recursos y los va a enrutar
-
+import authRouter from './auth.js';
 
 let router = express.Router();
 
@@ -18,6 +18,7 @@ router.use('/users',userRouter)
 router.use('/cities',citiesRouter)
 router.use('/itineraries', itinerariesRouter)
 router.use('/activities',activitiesRouter)
+router.use('/auth', authRouter)
 
 export default router
 
