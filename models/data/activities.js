@@ -230,7 +230,7 @@ async function createActivities(arrayActivities){
     try {
         await connect(process.env.LINK_DB)
         for (let activity of arrayActivities){
-            let itinerary = await Itinerary.findOne({_id: activity.itinerary_id }) 
+            let itinerary = await Itinerary.findOne({name: activity.itinerary_id }) 
             let itinerary_id = await itinerary._id
             activity.itinerary_id= itinerary_id
             await Activity.create(activity)

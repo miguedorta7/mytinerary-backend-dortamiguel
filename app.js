@@ -14,7 +14,7 @@ import logger from 'morgan'                   //para registrar cada una de las p
 import indexRouter from './routes/index.js'   //este enrutador va a llamar a TODOS los otros recuersos (cities,itineraries,users)
 import notFoundHandler from './middlewares/notFoundHandler.js'
 import errorHandler from './middlewares/errorHandler.js'
-import cors from 'cors'        //Modulo para debloquear las politicas de CORS
+//import cors from 'cors'        //Modulo para debloquear las politicas de CORS
 
 
 let app = express();                          //ejecutando el módulo de express: CREO UNA APP DE BACKEND (SERVIDOR)
@@ -23,6 +23,21 @@ let app = express();                          //ejecutando el módulo de express
 //SET es el método necesario para SETear (configurar) algo (motor de plantillas de vistas de EJS)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+/* const express = require('express'); const app = express();  // Configurar encabezados CORS app.use((req, res, next) => {   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');   next(); });  // Resto de la configuración del servidor // ...  app.listen(8080, () => {   console.log('Servidor escuchando en el puerto 8080'); });
+const express = require('express');
+const app = express(); */
+
+// Configurar encabezados CORS
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
+
+// Resto de la configuración del servidor
+// ...
 
 
 
@@ -42,5 +57,7 @@ app.use(notFoundHandler);
 
 // error handler
 app.use(errorHandler);
+
+
 
 export default app
