@@ -10,7 +10,7 @@ let router = express.Router();
 
 //Create
 
-router.post('/',create);
+router.post('/signup',create);
 
 router.get('/', read)
 
