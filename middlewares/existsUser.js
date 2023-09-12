@@ -6,7 +6,9 @@ export default async(req,res,next) => {
         if (one) {
             return res.status(400).json({
                 success: false,
+
                 message: 'user already exist',
+
                 response:one._id
             })
         }else{

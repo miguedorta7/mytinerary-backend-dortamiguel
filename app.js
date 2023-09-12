@@ -17,6 +17,7 @@ import errorHandler from './middlewares/errorHandler.js'
 //import cors from 'cors'        //Modulo para debloquear las politicas de CORS
 
 
+
 let app = express();                          //ejecutando el módulo de express: CREO UNA APP DE BACKEND (SERVIDOR)
 
 // VIEW ENGINE SETUP
@@ -38,6 +39,7 @@ app.use((req, res, next) => {
 
 // Resto de la configuración del servidor
 // ...
+
 
 
 
